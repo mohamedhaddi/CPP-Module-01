@@ -2,7 +2,7 @@ CC=clang++
 SRC=main.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 DFLAGS=-g
-NAME=sed
+NAME=replace
 
 all: $(NAME)
 

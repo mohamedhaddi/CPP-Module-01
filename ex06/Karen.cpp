@@ -39,12 +39,12 @@ void Karen::complain(std::string level)
 		&Karen::error
 	};
 
-	int condition = (toUpper(level) == "DEBUG") +
+	int logLevel = (toUpper(level) == "DEBUG") +
 					(toUpper(level) == "INFO") * 2 +
 					(toUpper(level) == "WARNING") * 3 +
 					(toUpper(level) == "ERROR") * 4;
 
-	switch (condition) {
+	switch (logLevel) {
 		case 1:
 			std::cout << "[ DEBUG ]" << std::endl;
 			(this->*levels[0])();

@@ -14,39 +14,26 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char **argv)
+void replace(std::string filename, std::string s1, std::string s2)
 {
-	std::string filename;
-	std::string s1;
-	std::string s2;
-
-	if (argc != 4)
-	{
-		std::cout << "Usage: ./a.out <filename> <string> <string>" << std::endl;
-		return (0);
-	}
-
-	filename = argv[1];
 	std::ifstream ifs(filename);
 	if (!ifs)
 	{
-		std::cout << "Error: File not found" << std::endl;
-		return (0);
+		std::cout << "Error: " << strerror(errno) << std::endl;
+		exit(1);
 	}
 
-	s1 = argv[2];
 	if (s1.empty())
 	{
 		std::cout << "Error: First string must not be empty" << std::endl;
-		return (0);
+		exit(1);
 	}
 
-	s2 = argv[3];
 	std::ofstream ofs(filename + ".replace");
 	if (!ofs)
 	{
 		std::cout << "Error: Can't create file" << std::endl;
-		return (0);
+		exit(1);
 	}
 
 	std::string line;
@@ -64,6 +51,17 @@ int main(int argc, char **argv)
 
 	ifs.close();
 	ofs.close();
+}
+
+int main(int argc, char **argv)
+{
+	if (argc != 4)
+	{
+		std::cout << "Usage: ./a.out <filename> <string> <string>" << std::endl;
+		return (1);
+	}
+
+	replace(argv[1], argv[2], argv[3]);
 
 	return (0);
 }

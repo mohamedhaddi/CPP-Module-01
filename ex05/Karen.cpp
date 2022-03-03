@@ -82,7 +82,7 @@ void Karen::error(void)
 
 void Karen::none(void)
 {
-	std::cout	<< "This level of complaints doesn't exist."
+	std::cout	<< "This level does not exist."
 				<< std::endl;
 }
 
