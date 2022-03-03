@@ -1,4 +1,4 @@
-CC=c++
+CC=clang++
 SRC=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 DFLAGS=-g

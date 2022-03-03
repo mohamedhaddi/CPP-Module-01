@@ -13,13 +13,19 @@
 #include <iostream>
 #include "Zombie.hpp"
 
+Zombie::Zombie(void): _name("unnamed")
+{
+	std::cout << "Zombie is born." << std::endl;
+	return ;
+}
+
 Zombie::Zombie(std::string const name): _name(name)
 {
 	std::cout << "Zombie " << name << " is born." << std::endl;
 	return ;
 }
 
-void Zombie::announce(void) const
+void Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

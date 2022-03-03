@@ -1,4 +1,4 @@
-CC=c++
+CC=clang++
 SRC=main.cpp Karen.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 DFLAGS=-g

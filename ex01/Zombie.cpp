@@ -13,7 +13,7 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(void): _name("")
+Zombie::Zombie(void)
 {
 	std::cout << "Zombie is born." << std::endl;
 	return ;
@@ -25,7 +25,7 @@ Zombie::Zombie(std::string const name): _name(name)
 	return ;
 }
 
-void Zombie::announce(void) const
+void Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
