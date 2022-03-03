@@ -6,7 +6,7 @@
 /*   By: mhaddi <mhaddi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 09:05:42 by mhaddi            #+#    #+#             */
-/*   Updated: 2022/03/03 15:39:54 by mhaddi           ###   ########.fr       */
+/*   Updated: 2022/03/03 15:53:50 by mhaddi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,34 @@ Karen::Karen(void)
 	return ;
 }
 
+std::string const toUpper(std::string str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		str[i] = toupper(str[i]);
+		i++;
+	}
+	return (str);
+}
+
 void Karen::complain(std::string level)
 {
-	void (Karen::*levels[5])(void) = {
-										&Karen::none,
-										&Karen::debug,
-										&Karen::info,
-										&Karen::warning,
-										&Karen::error
-									};
+	void (Karen::*levels[5])(void) =
+	{
+		&Karen::none,
+		&Karen::debug,
+		&Karen::info,
+		&Karen::warning,
+		&Karen::error
+	};
 
 	(this->*levels
 		[
-	 		(level == "DEBUG") + (level == "INFO") * 2 +
-			(level == "WARNING") * 3 + (level == "ERROR") * 4
+	 		(toUpper(level) == "DEBUG") +
+			(toUpper(level) == "INFO") * 2 +
+			(toUpper(level) == "WARNING") * 3 +
+			(toUpper(level) == "ERROR") * 4
 	 	]
 	)();
 }
