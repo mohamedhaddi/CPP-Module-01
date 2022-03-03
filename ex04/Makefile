@@ -1,8 +1,8 @@
 CC=c++
-SRC=main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC=main.cpp
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 DFLAGS=-g
-NAME=BraiiiiiiinnnzzzZ
+NAME=sed
 
 all: $(NAME)
 
