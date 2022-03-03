@@ -6,7 +6,7 @@
 /*   By: mhaddi <mhaddi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:31:05 by mhaddi            #+#    #+#             */
-/*   Updated: 2022/03/03 11:02:40 by mhaddi           ###   ########.fr       */
+/*   Updated: 2022/03/03 15:32:28 by mhaddi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		std::cout << "Usage: ./Karen <level>" << std::endl;
-		return (0);
+		return (1);
 	}
 
 	karen.complain(argv[1]);
 
-	return 0;
+	return (0);
 }
